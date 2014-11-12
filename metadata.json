@@ -1,0 +1,24 @@
+{
+  "name": "voltdb",
+  "version": "0.1",
+  "author": "eNovance",
+  "summary": "Module for installing VoltDB.",
+  "license": "Apache License, Version 2.0",
+  "source": "https://github.com/enovance/puppet-voltdb",
+  "project_page": "https://github.com/enovance/puppet-voltdb",
+  "issues_url": "https://github.com/enovance/puppet-voltdb/issues",
+  "types": [
+
+  ],
+  "description": "Module for installing VoltDB.",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=2.0.0"
+    },
+    {
+      "name": "example42/sysctl",
+      "version_requirement": ">=2.0.15"
+    }
+  ]
+}

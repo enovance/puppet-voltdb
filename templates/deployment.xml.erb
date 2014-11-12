@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<deployment>
+  <cluster hostcount="<%= @cluster_hostcount %>"
+           sitesperhost="<%= @cluster_sitesperhost %>"
+           kfactor="<%= @cluster_kfactor %>"
+  />
+
+  <commandlog enabled="<%= @commandlog_enabled %>"
+              synchronous="<%= @commandlog_synchronous %>">
+    <frequency time="<%= @frequency_time %>"
+               transactions="<%= @frequency_transactions %>"/>
+  </commandlog>
+
+  <snapshot enabled="<%= @snapshot_enabled %>"
+            frequency="<%= @snapshot_frequency %>"
+            prefix="<%= @snapshot_prefix %>"
+            retain="<%= @snapshot_retain %>" />
+  <security enabled="<%= @security_enabled %>"/>
+  <users>
+    <% @users.each do |_, user| %>
+    <user name="<%= user["name"] %>"
+          password="<%= user["password"] %>"
+          roles="<%= user["roles"] %>"/>
+    <% end %>
+  </users>
+  <paths>
+    <voltdbroot path="<%= @voltdb_path %>" />
+    <snapshots path="<%= @snapshots_path %>" />
+  </paths>
+</deployment>
