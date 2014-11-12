@@ -61,14 +61,14 @@ class voltdb (
         Exec['download'] -> Package['install'] -> File['cleanup']
     }
 
-    package { ['openjdk-7-jdk']:
+    package { ['openjdk-7-jdk', 'wget']:
         ensure   => installed,
     }
 
     url-package {'VoltDB':
         url      => "http://voltdb.com/downloads/technologies/server/voltdb-ent_${version}-1_amd64.deb",
         provider => 'dpkg',
-        require  => Package['openjdk-7-jdk'],
+        require  => Package['openjdk-7-jdk', 'wget'],
     }
 
     # http://docs.voltdb.com/AdminGuide/adminmemmgt.php
