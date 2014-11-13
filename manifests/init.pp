@@ -61,8 +61,16 @@ class voltdb (
         Exec['download'] -> Package['install'] -> File['cleanup']
     }
 
-    package { ['openjdk-7-jdk', 'wget']:
-        ensure   => installed,
+    if ! defined(Package['openjdk-7-jdk']) {
+        package { 'openjdk-7-jdk':
+            ensure => installed,
+        }
+    }
+
+    if ! defined(Package['wget']) {
+        package { 'wget':
+            ensure => installed,
+        }
     }
 
     url-package {'VoltDB':
