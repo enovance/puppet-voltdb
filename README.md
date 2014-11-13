@@ -57,24 +57,26 @@ voltdb::users:
         password: userpassword
         roles: user
 
-voltdb::license: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<license>
-    <permit version="1">
-        <issuer>
-            <company>VoltDB</company>
-            <email>support@voltdb.com</email>
-            <url>http://voltdb.com/</url>
-        </issuer>
-        <expiration>DATE</expiration>
-        <hostcount max="3"/>
-        <features trial="false">
-            <commandlogging>true</commandlogging>
-        </features>
-    </permit>
-    <signature>
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    </signature>
-</license>'
+voltdb::license:  |
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <license>
+        <permit version="1">
+            <issuer>
+                <company>VoltDB</company>
+                <email>support@voltdb.com</email>
+                <url>http://voltdb.com/</url>
+            </issuer>
+            <expiration>YYYY-MM-DD</expiration>
+            <hostcount max="X"/>
+            <features trial="false">
+                <commandlogging>true</commandlogging>
+            </features>
+        </permit>
+        <signature>
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        </signature>
+    </license>
 ```
 
 ##Limitations
