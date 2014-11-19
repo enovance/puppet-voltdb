@@ -33,4 +33,7 @@ class voltdb::params {
   $voltdb_path = '/var/lib/voltdb/voltdb'
   $snapshots_path = '/var/lib/voltdb/snapshots'
   $users = {}
+  $httpd_port = '8080',
+  $jsonapi_enabled = 'false',
+
 }

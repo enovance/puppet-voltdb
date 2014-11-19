@@ -26,6 +26,8 @@ class voltdb (
   $voltdb_path             = params_lookup( 'voltdb_path' ),
   $snapshots_path          = params_lookup( 'snapshots_path' ),
   $users                   = params_lookup( 'users' ),
+  $httpd_port              = params_lookup( 'httpd_port' ),
+  $jsonapi_enabled         = params_lookup( 'jsonapi_enabled' ),
 ) inherits voltdb::params {
 
     define url-package (
