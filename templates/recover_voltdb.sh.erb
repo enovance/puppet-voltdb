@@ -1,0 +1,4 @@
+#!/bin/sh
+ulimit -n 65000
+cd <%= @data_dir %>
+nohup /usr/bin/voltdb recover -d /etc/voltdb/deployment.xml -H <%= @master %> -l /etc/voltdb/license.xml >/dev/null 2>&1 &

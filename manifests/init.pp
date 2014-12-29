@@ -7,6 +7,7 @@
 #
 
 class voltdb (
+  $master                  = params_lookup( 'master' ),
   $version                 = params_lookup( 'version' ),
   $memory                  = params_lookup( 'memory' ),
   $data_dir                = params_lookup( 'data_dir' ),
@@ -99,6 +100,11 @@ class voltdb (
     file { "${data_dir}/snapshots":
         ensure  => 'directory',
         require => File[$data_dir],
+    }
+
+    file { "${data_dir}/recover_voltdb.sh"
+        require => File[$data_dir],
+        content => template('voltdb/recover_voltdb.sh.erb'),
     }
 
     # Deployment configuration file
