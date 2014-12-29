@@ -1,4 +1,4 @@
 #!/bin/sh
 ulimit -n 65000
 cd <%= @data_dir %>
-nohup /usr/bin/voltdb -H $1 >/dev/null 2>&1 &
+nohup /usr/bin/voltdb rejoin -H $1 >/dev/null 2>&1 &
