@@ -102,7 +102,7 @@ class voltdb (
         require => File[$data_dir],
     }
 
-    file { "${data_dir}/recover_voltdb.sh"
+    file { "${data_dir}/recover_voltdb.sh":
         require => File[$data_dir],
         content => template('voltdb/recover_voltdb.sh.erb'),
     }
