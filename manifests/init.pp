@@ -105,6 +105,7 @@ class voltdb (
     file { "${data_dir}/recover_voltdb.sh":
         require => File[$data_dir],
         content => template('voltdb/recover_voltdb.sh.erb'),
+        mode    => 0755,
     }
 
     # Deployment configuration file
