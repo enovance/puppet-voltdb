@@ -47,6 +47,8 @@ voltdb::snapshot_retain:              3
 voltdb::security_enabled:             true
 voltdb::voltdb_path:                  /var/lib/voltdb/voltdb/
 voltdb::snapshots_path:               /var/lib/voltdb/snapshots/
+voltdb::httpd_port:                   8080
+voltdb::jsonapi_enabled:              true
 voltdb::users:
     admin:
         name: admin
