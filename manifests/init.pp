@@ -108,6 +108,12 @@ class voltdb (
         mode    => 0755,
     }
 
+    file { "${data_dir}/rejoin_voltdb.sh":
+        require => File[$data_dir],
+        content => template('voltdb/rejoin_voltdb.sh.erb'),
+        mode    => 0755,
+    }
+
     # Deployment configuration file
     file { '/etc/voltdb/deployment.xml':
         require => File['/etc/voltdb'],

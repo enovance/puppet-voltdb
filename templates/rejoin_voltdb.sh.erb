@@ -1,0 +1,4 @@
+#!/bin/sh
+ulimit -n 65000
+cd <%= @data_dir %>
+nohup /usr/bin/voltdb -H $1 >/dev/null 2>&1 &

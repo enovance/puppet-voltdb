@@ -18,7 +18,7 @@ class voltdb::params {
   $master = 'voltdb1'
   $data_dir = '/var/lib/voltdb'
   $license = ''
-  $version =  '4.9'
+  $version =  '4.9.1'
   $cluster_hostcount = '3'
   $cluster_sitesperhost = '2'
   $cluster_kfactor = '1'
