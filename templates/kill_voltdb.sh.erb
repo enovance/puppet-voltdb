@@ -1,0 +1,3 @@
+#!/bin/sh
+cd <%= @data_dir %>
+/bin/kill $(ps aux | grep 'voltdb' | awk '{print $2}')
