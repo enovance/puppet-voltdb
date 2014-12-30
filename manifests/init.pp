@@ -92,30 +92,35 @@ class voltdb (
         ensure => 'directory',
     }
 
-    file { "${data_dir}/voltdb":
-        ensure  => 'directory',
+    file { "${data_dir}/scripts":
         require => File[$data_dir],
+        ensure => 'directory',
+    }
+
+    file { "${data_dir}/voltdb":
+        require => File[$data_dir],
+        ensure  => 'directory',
     }
 
     file { "${data_dir}/snapshots":
-        ensure  => 'directory',
         require => File[$data_dir],
+        ensure  => 'directory',
     }
 
-    file { "${data_dir}/recover_voltdb.sh":
-        require => File[$data_dir],
+    file { "${data_dir}/scripts/recover.sh":
+        require => File["${data_dir}/scripts"],
         content => template('voltdb/recover_voltdb.sh.erb'),
         mode    => 0755,
     }
 
-    file { "${data_dir}/rejoin_voltdb.sh":
-        require => File[$data_dir],
+    file { "${data_dir}/scripts/rejoin.sh":
+        require => File["${data_dir}/scripts"],
         content => template('voltdb/rejoin_voltdb.sh.erb'),
         mode    => 0755,
     }
 
-    file { "${data_dir}/kill_voltdb.sh":
-        require => File[$data_dir],
+    file { "${data_dir}/scripts/kill.sh":
+        require => File["${data_dir}/scripts"],
         content => template('voltdb/kill_voltdb.sh.erb'),
         mode    => 0755,
     }
